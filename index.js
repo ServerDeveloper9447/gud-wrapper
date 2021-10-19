@@ -171,6 +171,40 @@ async function nsfwYuri(key) {
 }
 }
 
+async function nsfwFuta(key) {
+    if (!key) {
+        return("Error: No key provided")
+    } else {
+    const fetched = await fetch(baseurl + `/nsfw/futanari?key=${encodeURIComponent(key)}`)
+    const r = await fetched.json()
+    if (!r.url) {
+        return("Error: Invalid Key")
+    } else {
+        return(r.url)
+    }
+}
+}
+
+async function nsfwBoobs(key) {
+    if (!key) {
+        return("Error: No key provided")
+    } else {
+    const fetched = await fetch(baseurl + `/nsfw/boobs?key=${encodeURIComponent(key)}`)
+    const r = await fetched.json()
+    if (!r.url) {
+        return("Error: Invalid Key")
+    } else {
+        return(r.url)
+    }
+}
+}
+
+async function foodporn() {
+    const r = await fetch(`${baseurl}/fun/foodporn`)
+    const data = await r.json()
+    if(!data) return "Error: An error occurred while fetching"
+    return data;
+}
 module.exports = {
     eightball,
     animequote,
