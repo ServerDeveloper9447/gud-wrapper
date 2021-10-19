@@ -45,6 +45,15 @@
     console.log(nsfw)
 })()
 ```
+## For `foodporn()` function
+```js
+(async () => {
+    const gud = require('gud-wrapper')
+    const food = gud.foodporn("true / false") // True = only image URL.
+
+    console.log(food)
+})()
+```
 ---
 For API key join: ***[Discord Server]*** <br>
 Demo Key/Public Key: `mischiefmanaged` <br>

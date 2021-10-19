@@ -20,6 +20,10 @@ async function pickupLine() {
     const r = await fetched.json()
     return (r.response)
 }
+/**
+ * 
+ * @param {string} type 
+ */
 async function joke(type) {
     if (!type) {
         return("Error: No joke type given. Types: < mom | dad | yomama >")
@@ -66,6 +70,10 @@ async function faizen() {
     const r = await fetched.json()
     return (r.url)
 }
+/**
+ * 
+ * @param {string} key 
+ */
 async function nsfwAss(key) {
     if (!key) {
         return("Error: No key provided")
@@ -198,12 +206,27 @@ async function nsfwBoobs(key) {
     }
 }
 }
-
-async function foodporn() {
-    const r = await fetch(`${baseurl}/fun/foodporn`)
+/**
+ * 
+ * @param {boolean} simplify  
+ */
+async function foodporn(/*boolean*/simplify) {
+    if (!simplify) {
+    const r = await fetch(baseurl + '/fun/foodporn')
+    const data = await r.json()
+    if(!data) return "Error: An error occurred while fetching"
+    return data
+    } else if(simplify === "true") {
+        const r = await fetch(baseurl + '/fun/foodporn?simplify=true')
+    const data = await r.json()
+    if(!data) return "Error: An error occurred while fetching"
+    return (data.url)
+    } else {
+        const r = await fetch(baseurl + '/fun/foodporn')
     const data = await r.json()
     if(!data) return "Error: An error occurred while fetching"
     return data;
+    }
 }
 module.exports = {
     eightball,
@@ -223,5 +246,8 @@ module.exports = {
     nsfwLewdneko,
     nsfwSuccubus,
     nsfwTentacles,
-    nsfwYuri
+    nsfwYuri,
+    nsfwFuta,
+    nsfwBoobs,
+    foodporn
 }
