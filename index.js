@@ -223,5 +223,8 @@ module.exports = {
     nsfwLewdneko,
     nsfwSuccubus,
     nsfwTentacles,
-    nsfwYuri
+    nsfwYuri,
+    nsfwFuta,
+    nsfwBoobs,
+    foodporn
 }
