@@ -210,23 +210,11 @@ async function nsfwBoobs(key) {
  * 
  * @param {boolean} simplify  
  */
-async function foodporn(/*boolean*/simplify) {
-    if (!simplify) {
-    const r = await fetch(baseurl + '/fun/foodporn')
-    const data = await r.json()
+async function foodporn(/*boolean*/simplify=false) {
+    const fetched = await fetch(`${baseurl}/fun/foodporn?simplify=${simplify}`)
+    const data = await fetched.json()
     if(!data) return "Error: An error occurred while fetching"
-    return data
-    } else if(simplify === "true") {
-        const r = await fetch(baseurl + '/fun/foodporn?simplify=true')
-    const data = await r.json()
-    if(!data) return "Error: An error occurred while fetching"
-    return (data.url)
-    } else {
-        const r = await fetch(baseurl + '/fun/foodporn')
-    const data = await r.json()
-    if(!data) return "Error: An error occurred while fetching"
-    return data;
-    }
+    return data    
 }
 module.exports = {
     eightball,
