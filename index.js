@@ -1,5 +1,6 @@
 const fetch = require('node-fetch')
 const baseurl = "https://gud-api.gofaizen.repl.co"
+const chalk = require("chalk")
 
 async function eightball() {
     const fetched = await fetch(baseurl + "/fun/8ball")
@@ -74,147 +75,118 @@ async function faizen() {
  * 
  * @param {string} key 
  */
-async function nsfwAss(key) {
-    if (!key) {
-        return("Error: No key provided")
-    } else {
-    const fetched = await fetch(baseurl + `/nsfw/ass?key=${encodeURIComponent(key)}`)
+async function nsfwAss() {
+    const fetched = await fetch(baseurl + `/nsfw/ass`)
     const r = await fetched.json()
     if (!r.url) {
-        return("Error: Invalid Key")
+        return("Error: Fetch error")
     } else {
         return(r.url)
     }
-}
-}
-async function nsfwBdsm(key) {
-    if (!key) {
-        return("Error: No key provided")
-    } else {
-    const fetched = await fetch(baseurl + `/nsfw/bdsm?key=${encodeURIComponent(key)}`)
-    const r = await fetched.json()
-    if (!r.url) {
-        return("Error: Invalid Key")
-    } else {
-        return(r.url)
-    }
-}
-}
-async function nsfwBlowjob(key) {
-    if (!key) {
-        return("Error: No key provided")
-    } else {
-    const fetched = await fetch(baseurl + `/nsfw/blowjob?key=${encodeURIComponent(key)}`)
-    const r = await fetched.json()
-    if (!r.url) {
-        return("Error: Invalid Key")
-    } else {
-        return(r.url)
-    }
-}
-}
-async function nsfwHentai(key) {
-    if (!key) {
-        return("Error: No key provided")
-    } else {
-    const fetched = await fetch(baseurl + `/nsfw/hentai?key=${encodeURIComponent(key)}`)
-    const r = await fetched.json()
-    if (!r.url) {
-        return("Error: Invalid Key")
-    } else {
-        return(r.url)
-    }
-}
-}
-async function nsfwLewdneko(key) {
-    if (!key) {
-        return("Error: No key provided")
-    } else {
-    const fetched = await fetch(baseurl + `/nsfw/lewdneko?key=${encodeURIComponent(key)}`)
-    const r = await fetched.json()
-    if (!r.url) {
-        return("Error: Invalid Key")
-    } else {
-        return(r.url)
-    }
-}
-}
-async function nsfwSuccubus(key) {
-    if (!key) {
-        return("Error: No key provided")
-    } else {
-    const fetched = await fetch(baseurl + `/nsfw/succubus?key=${encodeURIComponent(key)}`)
-    const r = await fetched.json()
-    if (!r.url) {
-        return("Error: Invalid Key")
-    } else {
-        return(r.url)
-    }
-}
-}
-async function nsfwTentacles(key) {
-    if (!key) {
-        return("Error: No key provided")
-    } else {
-    const fetched = await fetch(baseurl + `/nsfw/tentacles?key=${encodeURIComponent(key)}`)
-    const r = await fetched.json()
-    if (!r.url) {
-        return("Error: Invalid Key")
-    } else {
-        return(r.url)
-    }
-}
-}
-async function nsfwYuri(key) {
-    if (!key) {
-        return("Error: No key provided")
-    } else {
-    const fetched = await fetch(baseurl + `/nsfw/yuri?key=${encodeURIComponent(key)}`)
-    const r = await fetched.json()
-    if (!r.url) {
-        return("Error: Invalid Key")
-    } else {
-        return(r.url)
-    }
-}
 }
 
-async function nsfwFuta(key) {
-    if (!key) {
-        return("Error: No key provided")
-    } else {
-    const fetched = await fetch(baseurl + `/nsfw/futanari?key=${encodeURIComponent(key)}`)
+async function nsfwBdsm() {
+    const fetched = await fetch(baseurl + `/nsfw/bdsm`)
     const r = await fetched.json()
     if (!r.url) {
-        return("Error: Invalid Key")
+        return("Error: Fetch error")
     } else {
         return(r.url)
     }
-}
 }
 
-async function nsfwBoobs(key) {
-    if (!key) {
-        return("Error: No key provided")
-    } else {
-    const fetched = await fetch(baseurl + `/nsfw/boobs?key=${encodeURIComponent(key)}`)
+async function nsfwBlowjob() {
+    const fetched = await fetch(baseurl + `/nsfw/blowjob`)
     const r = await fetched.json()
     if (!r.url) {
-        return("Error: Invalid Key")
+        return("Error: Fetch error")
     } else {
         return(r.url)
     }
 }
+
+async function nsfwHentai() {
+    const fetched = await fetch(baseurl + `/nsfw/hentai`)
+    const r = await fetched.json()
+    if (!r.url) {
+        return("Error: Fetch error")
+    } else {
+        return(r.url)
+    }
 }
+
+async function nsfwLewdneko() {
+    const fetched = await fetch(baseurl + `/nsfw/lewdneko`)
+    const r = await fetched.json()
+    if (!r.url) {
+        return("Error: Fetch error")
+    } else {
+        return(r.url)
+    }
+}
+
+async function nsfwSuccubus() {
+    const fetched = await fetch(baseurl + `/nsfw/succubus`)
+    const r = await fetched.json()
+    if (!r.url) {
+        return("Error: Fetch Error")
+    } else {
+        return(r.url)
+    }
+}
+
+async function nsfwTentacles() {
+    const fetched = await fetch(baseurl + `/nsfw/tentacles`)
+    const r = await fetched.json()
+    if (!r.url) {
+        return("Error: Fetch Error")
+    } else {
+        return(r.url)
+    }
+}
+
+async function nsfwYuri() {
+    const fetched = await fetch(baseurl + `/nsfw/yuri` 
+    const r = await fetched.json()
+    if (!r.url) {
+        return("Error: Fetch error")
+    } else {
+        return(r.url)
+    }
+}
+async function foodporn(/*boolean*/simplify=false) {  
 /**
- * 
- * @param {boolean} simplify  
- */
-async function foodporn(/*boolean*/simplify=false) {
+* 
+* @param {boolean} simplify  
+*/
     const fetched = await fetch(`${baseurl}/fun/foodporn?simplify=${simplify}`)
     const data = await fetched.json()
     if(!data) return "Error: An error occurred while fetching"
-    return data    
+    return data
+}
+
+async function pypi(package) {
+/**
+* @param {string} package
+*
+*/
+    const fetched = await fetch(`${baseurl}/misc/pypi?q=${encodeURIComponent(package)}`)
+    const r = await fetched.json()
+    if (!package) throw new SyntaxError(chalk.red("Error: No package name provided"))
+    if(!r) throw new Error("Fetch Error")
+    return r
+}
+
+async function owofy(text) {
+/**
+* @param {string} text
+*
+*/
+    const fetched = await fetch(`${baseurl}/fun/owofy?text=${encodeURIComponent(text)}`)
+    const r = await fetched.json()
+    if (!package) return new SyntaxError(chalk.red("Error: No text provided"))
+    if(!r) throw new Error("Fetch Error")
+    return r.owofied
 }
 module.exports = {
     eightball,
@@ -237,5 +209,6 @@ module.exports = {
     nsfwYuri,
     nsfwFuta,
     nsfwBoobs,
-    foodporn
+    foodporn,
+    owofy
 }
