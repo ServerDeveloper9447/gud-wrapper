@@ -55,9 +55,8 @@
 })()
 ```
 ---
-For API key join: ***[Discord Server]*** <br>
-Demo Key/Public Key: `mischiefmanaged` <br>
-***Note: Only NSFW endpoints require key. If you do not use nsfw endpoints then you don't have to request a key.***
+For Support: ***[Discord Server]*** <br>
+***NSFW Endpoints now don't require any key.***
 
 > API Developer: **`NotFaizen#3463`**<br>
 > Wrapper made by: **`Server Developer#9447`**
